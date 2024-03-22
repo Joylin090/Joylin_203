@@ -1,0 +1,44 @@
+package journal;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class EmployeeTest {
+	//Joylin D'Cunha RollNo: 203
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+   @Test
+    public void testCalculateTotalSalaryWithDA() {
+    String name = "Asher";
+    String jobTitle = "Software Engineer";
+    double basicSalary = 50000;
+    Employee emp = new Employee(name, jobTitle, basicSalary);
+
+	 // Assuming DA is 10% of the basic salary
+    double expectedDA = 0.10 * basicSalary;
+    double HRA = 5000;
+    double expectedTotalSalary = basicSalary + expectedDA + HRA;
+
+	 assertEquals(expectedTotalSalary, emp.calculateTotalSalary(), 0.01); 
+		    }
+
+}
